@@ -7,7 +7,7 @@ import {openAddModal} from "../../store/reducers/modalAdd"
 import imQuest from "../../img/icons/quest.svg"
 
 export const Header = props => {
-    //consts
+    //config
     const dispatch = useDispatch();
 
 
