@@ -19,10 +19,17 @@ export const closeAddModal = () => {
 }
 
 
+
+//============
+//============ THUNK
+//============
+
+
+
+
 //============
 //============ REDUCER
 //============
-
 //INITIAL STATE
 const initialState = {
     modalAdd: false

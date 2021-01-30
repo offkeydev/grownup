@@ -16,8 +16,10 @@ function App() {
             <div className="app">
                 {/* APP ROUTING */}
                 <BrowserRouter>
-                    <AdminPanel userAuth={true} />
-                    <div className="containeer"> {routes} </div>
+                    <AdminPanel userAuth={false} />
+                    <div className="containeer">
+                        {routes}
+                    </div>
                 </BrowserRouter>
 
                 <AddQuest />

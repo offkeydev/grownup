@@ -10,5 +10,7 @@ export const AdminPanel = ({userAuth}) => {
                 <Header />
             </>
         )
+    } else {
+        return null
     }
 }
