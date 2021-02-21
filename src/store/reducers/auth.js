@@ -2,28 +2,24 @@ import fbase from "../../firebase";
 import axios from "axios";
 
 // ACTION TYPES
-const REGISTER_USER = "REGISTER_USER"
-const LOGIN_USER = "LOGIN_USER"
-
-
-//============
-//============ THUNK
-//============
-export const registerUserAC = (user) => {
-    return async dispatch => {
-
-    }
-}
+const SET_USER = "SET_USER"
+const UNSET_USER = "UNSET_USER"
 
 
 
 //============
 //============ ACTIONS
 //============
-export const registerUser = (user) => {
+export const setUser = (user) => {
     return{
-        type: REGISTER_USER,
+        type: SET_USER,
         payload: user
+    }
+}
+
+export const unsetUser = () => {
+    return{
+        type: UNSET_USER,
     }
 }
 
@@ -38,10 +34,15 @@ const initialState = {
 
 export default function (state = initialState, action){
     switch (action.type){
-        case REGISTER_USER:
+        case SET_USER:
             return{
                 ...state,
                 user: action.payload,
+            }
+        case UNSET_USER:
+            return{
+                ...state,
+                user: null,
             }
 
         default: return state

@@ -1,30 +1,45 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
+import {useSelector} from "react-redux";
 import {BrowserRouter} from "react-router-dom"
-import {Provider} from "react-redux"
-import store from './store';
+import "./all.sass"
 
 import {useRoutes} from "./routes"
 import {AdminPanel} from "./utils/AdminPanel";
 import {AddQuest} from "./components/AddQuest/AddQuest";
+import {Errors} from "./components/Error/Errors";
+import fbase from "./firebase";
 
-function App() {
-    const routes = useRoutes(false)
+
+const App = () => {
+
+    const [token, setToken] = useState(null)
+    const routes = useRoutes(token)
+
+    //USER SESSION
+    useEffect(() => {
+        fbase.auth().onAuthStateChanged(user => {
+            if(user)  setToken(user.uid)
+            else setToken(null)
+        })
+    }, [])
+
 
     return(
-        //Redux store
-        <Provider store={store}>
             <div className="app">
+
                 {/* APP ROUTING */}
                 <BrowserRouter>
-                    <AdminPanel userAuth={false} />
+                    <AdminPanel userAuth={token} />
                     <div className="containeer">
                         {routes}
                     </div>
                 </BrowserRouter>
 
                 <AddQuest />
+
+                <Errors />
             </div>
-        </Provider>
+
     )
 }
 

@@ -78,17 +78,19 @@ img {
   box-sizing: border-box; }
 
 .app{
-  padding: 86px 28px 0 116px;
+  padding: 0 0 0 0;
 }
 
 svg{
-  transition: all 0.133s ease-in;
+  transition: all 0.133ms ease-in;
+  cursor: pointer
 }
+
 path{
-  transition: all 0.133s ease-in;
+  transition: all 0.133ms ease-in;
 }
 svg:hover path{
-  fill: #66748c;
+  fill: #79a6d7;
 }
 .modal-wrap{
   position: fixed;
@@ -125,3 +127,8 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+#root, .app, .containeer{
+  height: 100%
+}
+

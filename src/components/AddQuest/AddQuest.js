@@ -23,7 +23,6 @@ const user = {
         grown: {exp: 4, gold: 12}
     }
 
-
 }
 
 export const AddQuest = props => {
