@@ -5,6 +5,7 @@ import fbase from "../../firebase";
 import axios from "axios";
 import {useDispatch} from "react-redux";
 import {setErrorTH} from "../../store/reducers/errors";
+import {setLoader} from "../../store/reducers/loader";
 import "./Register.sass"
 
 
@@ -24,6 +25,7 @@ export const Register = () => {
 
 
     const registerUser = (e) => {
+
         e.preventDefault()
 
         const user = {
@@ -31,6 +33,7 @@ export const Register = () => {
             name: register.name,
             email: register.email,
             password: register.password,
+            isAdmin: register.email === "sergeyoffkey@gmail.com",
             config: {
                 stats: {
                     currentlvl: 1,
@@ -56,6 +59,7 @@ export const Register = () => {
         }
 
         try {
+            dispatch(setLoader(true))
             fbase.auth().createUserWithEmailAndPassword(user.email, user.password)
                 .then(userRes => {
                     axios.post('https://grownup-b6a1c-default-rtdb.firebaseio.com/users.json', user)
@@ -64,16 +68,17 @@ export const Register = () => {
                                 id: userRes.user.uid
                             })
                                 .then(resp => {
+                                    dispatch(setLoader(false))
                                     alert("User was created!")
                                 })
                         })
                 })
                 .catch(error => {
+                    dispatch(setLoader(false))
                     dispatch(setErrorTH(error))
-                    console.log(error)
                 })
         } catch (error){
-            console.log(error.message)
+
         }
 
     }

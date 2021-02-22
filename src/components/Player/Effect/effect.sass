@@ -1,0 +1,95 @@
+.cmp_effects
+  height: 100%
+  background: linear-gradient(180deg, #1D4E89 0%, #F85C71 100%), linear-gradient(180deg, #1D4E89 0%, #F85C71 100%), linear-gradient(180deg, #1D4E89 0%, #F85C71 100%)
+  mix-blend-mode: normal
+  padding: 8px 16px
+  margin-right: 36px
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  h3
+    font-family: "Roboto", sans-serif
+    font-style: normal
+    font-weight: 900
+    font-size: 14px
+    line-height: 16px
+    color: #FFFFFF
+    margin-bottom: 12px
+  ul
+    display: flex
+    li
+      margin-right: 14px
+      box-sizing: border-box
+      cursor: pointer
+      position: relative
+      >figure
+        width: 32px
+        height: 32px
+        border: 2px solid #FFFFFF
+        line-height: 1
+        margin-bottom: 6px
+        border-radius: 50%
+      span
+        font-family: "Roboto", sans-serif
+        font-style: normal
+        font-weight: 300
+        font-size: 12px
+        line-height: 1
+        color: #FFFFFF
+        text-align: center
+        display: block
+      .hidden-description
+        position: absolute
+        top: 100%
+        left: 0
+        background: linear-gradient(180deg, #1D4E89 0%, #F85C71 100%), linear-gradient(180deg, #1D4E89 0%, #F85C71 100%), linear-gradient(180deg, #1D4E89 0%, #F85C71 100%)
+        mix-blend-mode: normal
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 12px
+        padding: 18px 12px
+        min-width: 265px
+        opacity: 0
+        z-index: -100
+        transition: opacity 0.133s ease-in-out
+        h5
+          font-family: "Roboto", sans-serif
+          font-style: normal
+          font-weight: 900
+          font-size: 16px
+          line-height: 1
+          color: #FFFFFF
+          margin-bottom: 8px
+        p
+          font-family: "Roboto", sans-serif
+          font-style: normal
+          font-weight: 300
+          font-size: 14px
+          line-height: 16px
+          color: #FFFFFF
+          margin-bottom: 16px
+        .short-info
+          display: flex
+          align-items: center
+          div
+            display: flex
+            align-items: center
+            margin-right: 16px
+            figure
+              margin-right: 6px
+            i
+              font-family: "Roboto", sans-serif
+              font-style: normal
+              font-weight: 300
+              font-size: 14px
+              color: #FFFFFF
+            .loss
+              color: #F56464
+              font-weight: 900
+            .grown
+              color: #70bf50
+              font-weight: 900
+li.open
+  .hidden-description
+    opacity: 1 !important
+    z-index: 10 !important
+
+
+

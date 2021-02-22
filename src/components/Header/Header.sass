@@ -6,54 +6,39 @@
   left: 0
   top: 0
   width: 100%
-  padding: 12px 24px 12px 110px
+  padding: 0 36px 0 92px
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
   z-index: 10
   background-color: #FFFFFF
-  .user-stats
+  >.inn
+    display: flex
+    justify-content: space-between
+    width: 100%
+    align-items: center
+  aside
+    display: block
+
+  .player-components
     display: flex
     align-items: center
-  .user-lvl
-    background-color: #365D90
-    width: 38px
-    height: 38px
-    border-radius: 50%
-    font-family: "Roboto", sans-serif
-    font-style: normal
-    font-weight: 900
-    font-size: 24px
-    color: #FFFFFF
-    display: flex
-    align-items: center
-    justify-content: center
-    margin-right: 24px
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15)
-  .user-grow
-    font-family: "Roboto", sans-serif
-    font-style: normal
-    font-weight: 900
-    font-size: 16px
-    display: flex
-    align-items: center
-    color: #545454
-    .current
-      font-family: "Roboto",sans-serif
-      font-style: normal
-      font-weight: 900
-      font-size: 20px
-      color: #52C05D
-      margin: 0 6px
-  .user
+  .option
     display: flex
     align-items: center
     figure
-      width: 48px
-      height: 48px
-      background-color: #66748c
+      width: 54px
+      height: 54px
+      background-color: #E7E7E7
       border-radius: 50%
-      margin-right: 18px
-    p
-      font-family: "Roboto",sans-serif
-      font-style: normal
-      font-weight: 700
-      font-size: 16px
+      margin-right: 20px
+    .menu
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      min-height: 100%
+      cursor: pointer
+      span
+        display: block
+        width: 4px
+        height: 4px
+        background-color: #E7E7E7
+        border-radius: 50%

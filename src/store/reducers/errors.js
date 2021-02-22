@@ -15,6 +15,7 @@ export const setErrorTH = (error) => {
     }
 }
 
+//ACTIONS
 export const setError = (error) => {
     return{
         type: SET_ERROR,
